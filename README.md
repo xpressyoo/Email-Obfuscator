@@ -1,6 +1,6 @@
 # Email Obfuscator
 
-Easy-to-use substitution cipher encrypting via ROT13 email addresses to avoid them getting harvested by spam-bots while keeping the mailto: feature. It rests on JavaScript and includes a pure CSS fallback.
+Easy-to-use [substitution cipher](http://en.wikipedia.org/wiki/Substitution_cipher) encrypting via [ROT13](http://en.wikipedia.org/wiki/ROT13) email addresses to avoid them getting harvested by spam-bots while keeping the mailto: feature. It rests on JavaScript and includes a pure CSS fallback. See file "obfuscator.html" for more details.
 
 ## ROT13 function (JavaScript)
 
