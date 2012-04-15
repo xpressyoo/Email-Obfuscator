@@ -108,10 +108,11 @@ var anchorb = anchor.rotate();
 var subjectb = '?fhowrpg=' + subject.rotate();
 
 // OUTPUT
-if (subject === ''){var subjectb = '';$('#result').css('height','120px');}else{$('#result').css('height','140px');}
+
+if (subject === ''){var subjectb = '';$('#result').css('height','120px');}else{$('#result').css('height','130px');}
 var help = '<!--Place the code below where you want the link to be displayed-->';
 var noscript = '<noscript><span style="unicode-bidi:bidi-override;direction:rtl;">' + emailrev + '</span></noscript>';
-var code = help + '\n<script'+ ht +'>\n'+'document.write("<n uers=\\"znvygb:' + emailb + subjectb + '\\" '+ target +'>' + anchorb + '</n>".replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);}));'+'\n<\/script>\n' + noscript;
+var code = help + '\n<script'+ ht +'>'+'var eo=document.createElement("span");eo.innerHTML="<n uers=\\"znvygb:' + emailb + subjectb +'\\" '+ target +'>' + anchorb + '</n>\".replace(/[a-z0-9]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});document.body.appendChild(eo);'+'<\/script>\n' + noscript;
 $("#result").val(code);
 }).keyup();
 }).change();
