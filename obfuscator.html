@@ -80,7 +80,7 @@ $('input').focus(function() {  $(".info").css('display','block');  });
 String.prototype.reverse = function() { return this.split( '' ).reverse().join( '' ); };
 
 // ROT13 function
-String.prototype.rotate  = function() { return this.replace(/[a-z0-9]/ig, function(chr) {
+String.prototype.rotate  = function() { return this.replace(/[a-zA-Z]/ig, function(chr) {
                 var cc = chr.charCodeAt(0);
                 if (cc >= 65 && cc <= 90) cc = 65 + ((cc - 52) % 26);
                 else if (cc >= 97 && cc <= 122) cc = 97 + ((cc - 84) % 26);
@@ -112,7 +112,7 @@ var subjectb = '?fhowrpg=' + subject.rotate();
 if (subject === ''){var subjectb = '';$('#result').css('height','120px');}else{$('#result').css('height','130px');}
 var help = '<!--Place the code below where you want the link to be displayed-->';
 var noscript = '<noscript><span style="unicode-bidi:bidi-override;direction:rtl;">' + emailrev + '</span></noscript>';
-var code = help + '\n<script'+ ht +'>'+'var eo=document.createElement("span");eo.innerHTML="<n uers=\\"znvygb:' + emailb + subjectb +'\\" '+ target +'>' + anchorb + '</n>\".replace(/[a-z0-9]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});document.body.appendChild(eo);'+'<\/script>\n' + noscript;
+var code = help + '\n<script'+ ht +'>'+'var eo=document.createElement("span");eo.innerHTML="<n uers=\\"znvygb:' + emailb + subjectb +'\\" '+ target +'>' + anchorb + '</n>\".replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});document.body.appendChild(eo);'+'<\/script>\n' + noscript;
 $("#result").val(code);
 }).keyup();
 }).change();
