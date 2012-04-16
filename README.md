@@ -5,7 +5,7 @@ Easy-to-use [substitution cipher](http://en.wikipedia.org/wiki/Substitution_ciph
 ### ROT13 function (JavaScript)
 
     String.prototype.rotate  = function() { 
-                return this.replace(/[a-z0-9]/ig, function(chr) {
+                return this.replace(/[a-zA-Z]/ig, function(chr) {
                 var cc = chr.charCodeAt(0);
                 if (cc >= 65 && cc <= 90) cc = 65 + ((cc - 52) % 26);
                 else if (cc >= 97 && cc <= 122) cc = 97 + ((cc - 84) % 26);
@@ -22,8 +22,17 @@ Easy-to-use [substitution cipher](http://en.wikipedia.org/wiki/Substitution_ciph
           
           };
           
+### Display & De-cipher the mailto
+
+    var eo=document.createElement("span");
+
+    eo.innerHTML="<n uers=\\"znvygb:' + email + subject +'\\">' + anchor + '</n>\".replace(/[a-z0-9]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});
+    
+    document.body.appendChild(eo);
           
-# MIT License
+where variables "email", "subject" and "anchor" have been retrieved from input fields and rotated thanks to the rotate() function.
+
+## MIT License
 
 Copyright (c) 2012 [Florian Bersier](http://www.florianbersier.com)
 
