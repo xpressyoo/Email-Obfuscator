@@ -35,4 +35,7 @@ where variables "email", "subject" and "anchor" have been retrieved from input f
 -----------------------------------------------------------
 
 Copyright (c) 2012 [Florian Bersier](http://www.florianbersier.com) | MIT Licensed 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 30571107f94caae43ee4e0e3c11e9442bf712591

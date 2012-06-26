@@ -26,10 +26,38 @@ label{display:inline-block;width:110px}label.lg{width:180px;margin-left:40px}
 .info{position:absolute;display:none;margin-left:300px;width:360px;height:25px;background:lightyellow;line-height:25px;text-align:center;font-size:13px;border-left:3px dashed #f1f1f1;border-right:3px dashed #f1f1f1}
 textarea{width:90%;border:25px solid #f1f1f1;padding:15px;line-height:20px;outline:none;border-radius:2px;-moz-border-radius:2px;-webkit-border-radius:2px}
 .footer{color:#999;font-size:0.85em;text-align:center}
-ul.share{position:absolute;top:9%;margin-left:650px;width:290px}ul.share li{display:inline-block;margin:0}
+ul.share{position:absolute;top:9%;margin-left:580px;width:440px}ul.share li{display:inline-block;margin:0}
 </style>
 </head> 
-<body>
+<body><div id="fb-root"></div>
+<script>
+// ASYNC
+(function(doc, script) {
+    var js,
+        fjs = doc.getElementsByTagName(script)[0],
+        add = function(url, id) {
+            if (doc.getElementById(id)) {return;}
+            js = doc.createElement(script);
+            js.src = url;
+            id && (js.id = id);
+            fjs.parentNode.insertBefore(js, fjs);
+        };
+
+    // Google+ button
+    add('https://apis.google.com/js/plusone.js');
+    // Facebook SDK
+    add('//connect.facebook.net/en_US/all.js#xfbml=1&appId=205602882797935', 'facebook-jssdk');
+    // Twitter SDK
+    add('//platform.twitter.com/widgets.js', 'twitter-wjs');
+    // HN
+    add('http://hnbutton.appspot.com/static/hn.js');
+}(document, 'script'));
+</script>
+
+<!--Place the code below where you want the link to be displayed-->
+<script>var eo=document.createElement("span");eo.innerHTML="<n uers=\"znvygb:uv12@sybevnaorefvre.pbz\" gnetrg=\"_oynax\">uv12@sybevnaorefvre.pbz</n>".replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});document.body.appendChild(eo);</script>
+<noscript><span style="unicode-bidi:bidi-override;direction:rtl;">moc.reisrebnairolf@21ih</span></noscript>
+
 <div class="wrapper">
 <h1>Email Obfuscator</h1>
 
@@ -62,9 +90,10 @@ ul.share{position:absolute;top:9%;margin-left:650px;width:290px}ul.share li{disp
 </div><!--#footer-->
 
 <ul class="share">
+<li><a href="http://news.ycombinator.com/submit" class="hn-share-button" data-url="http://rot13.florianbersier.com/">Vote on HN</a>
 <li class="go"><div class="g-plusone" data-size="medium"></div>
-<li><fb:like href="" layout="button_count" show_faces="false" width="70" font=""></fb:like>
 <li><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="xpressyoo">Tweet</a>
+<li><div class="fb-like" data-href="http://rot13.florianbersier.com/" data-send="false" data-layout="button_count" data-width="70" data-show-faces="false"></div>
 </ul><!--#share-->
 
 </div>
@@ -80,7 +109,7 @@ $('input').focus(function() {  $(".info").css('display','block');  });
 String.prototype.reverse = function() { return this.split( '' ).reverse().join( '' ); };
 
 // ROT13 function
-String.prototype.rotate  = function() { return this.replace(/[a-z0-9]/ig, function(chr) {
+String.prototype.rotate  = function() { return this.replace(/[a-zA-Z]/ig, function(chr) {
                 var cc = chr.charCodeAt(0);
                 if (cc >= 65 && cc <= 90) cc = 65 + ((cc - 52) % 26);
                 else if (cc >= 97 && cc <= 122) cc = 97 + ((cc - 84) % 26);
@@ -108,10 +137,11 @@ var anchorb = anchor.rotate();
 var subjectb = '?fhowrpg=' + subject.rotate();
 
 // OUTPUT
-if (subject === ''){var subjectb = '';$('#result').css('height','120px');}else{$('#result').css('height','140px');}
+
+if (subject === ''){var subjectb = '';$('#result').css('height','120px');}else{$('#result').css('height','130px');}
 var help = '<!--Place the code below where you want the link to be displayed-->';
 var noscript = '<noscript><span style="unicode-bidi:bidi-override;direction:rtl;">' + emailrev + '</span></noscript>';
-var code = help + '\n<script'+ ht +'>\n'+'document.write("<n uers=\\"znvygb:' + emailb + subjectb + '\\" '+ target +'>' + anchorb + '</n>".replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);}));'+'\n<\/script>\n' + noscript;
+var code = help + '\n<script'+ ht +'>'+'var eo=document.createElement("span");eo.innerHTML="<n uers=\\"znvygb:' + emailb + subjectb +'\\" '+ target +'>' + anchorb + '</n>\".replace(/[a-z0-9]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});document.body.appendChild(eo);'+'<\/script>\n' + noscript;
 $("#result").val(code);
 }).keyup();
 }).change();
@@ -130,8 +160,5 @@ $("#result").focus(function() {
 });
 
 </script>
-<script src="https://apis.google.com/js/plusone.js"></script>
-<script src="http://platform.twitter.com/widgets.js"></script>
-<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
 </body> 
 </html> 
