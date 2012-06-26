@@ -24,11 +24,11 @@ Easy-to-use [substitution cipher](http://en.wikipedia.org/wiki/Substitution_ciph
           
 ### Display & De-cipher the mailto
 
-    var eo=document.createElement("span");
-
-    eo.innerHTML="<n uers=\\"znvygb:' + email + subject +'\\">' + anchor + '</n>\".replace(/[a-z0-9]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});
     
-    document.body.appendChild(eo);
+    <span id="obf">
+    <script>
+    document.getElementById("obf").innerHTML="<n uers=\\"znvygb:' + email + subject +'\\">' + anchor + '</n>\".replace(/[a-z0-9]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});
+    </script>
           
 where variables "email", "subject" and "anchor" have been retrieved from input fields and rotated thanks to the rotate() function.
 
