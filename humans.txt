@@ -1,0 +1,15 @@
+/* ABOUT ME */
+                
+Name:	 	Florian Bersier
+              
+Website  : 	http://www.florianbersier.com
+Google+  :     	http://profiles.google.com/florian.bersier                    
+Twitter  : 	http://twitter.com/xpressyoo
+LinkedIn : 	http://www.linkedin.com/in/florianbersier
+Github   :	https://github.com/xpressyoo
+Portfolio:	http://www.behance.net/bersier
+		
+/* SITE */
+                          
+Standards: 	HTML5, CSS3
+Components: 	jQuery         
