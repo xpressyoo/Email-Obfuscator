@@ -1,3 +1,167 @@
-<!DOCTYPE html><html itemscope itemtype="http://schema.org/Product"><head><title>Email Obfuscation via ROT13 Cipher</title><!--metadata--><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" /><meta http-equiv="Content-Language" content="en" /><meta http-equiv="keywords" content="ROT13,algorithm,converter,javascript,tool,online,free" /><meta name="Description" content="An easy-to-use substitution cipher that encrypts via ROT13 your email addresses to avoid them getting harvested by spam-bots while keeping the mailto: feature." /><meta name="author" content="Florian Bersier" /><meta itemprop="image" content="http://cdn.florianbersier.com/res/100/rot13.png"><link rel="image_src" type="image/png" href="http://cdn.florianbersier.com/res/100/rot13.png" /><!--favicon --><link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /><!--css stylesheet--><style>body{margin:0;padding:0;width:100%;font:1em Helvetica,Arial,sans-serif;color:#333;border-top:3px solid #333}a{text-decoration:none}a:hover{text-decoration:underline}ul p{margin:4px 0}.wrapper{width:980px;margin:0 auto;}h1{margin-top:6%}p.i{line-height:24px;margin-bottom:25px}ul{list-style:none;padding:0;margin:0 0 0 8%}ul li{display:inline-block;vertical-align:top}ul li:first-child{margin-right:60px}input[type="text"]{padding:3px 10px;border:1px solid #eee;width:230px}label{display:inline-block;width:110px}label.lg{width:180px;margin-left:40px}.tip{color:#999;font-size:0.75em;line-height:14px}.info{position:absolute;display:none;margin-left:300px;width:360px;height:25px;background:lightyellow;line-height:25px;text-align:center;font-size:13px;border-left:3px dashed #f1f1f1;border-right:3px dashed #f1f1f1}textarea{width:90%;border:25px solid #f1f1f1;padding:15px;line-height:20px;outline:none;border-radius:2px;-moz-border-radius:2px;-webkit-border-radius:2px}.footer{color:#999;font-size:0.85em;text-align:center}ul.share{position:absolute;top:9%;margin-left:600px;width:440px}ul.share li{display:inline-block;margin:0}</style></head><body><div id="fb-root"></div><script>(function(e,a){var d,b=e.getElementsByTagName(a)[0],c=function(f,g){if(e.getElementById(g)){return}d=e.createElement(a);d.src=f;g&&(d.id=g);b.parentNode.insertBefore(d,b)};c("https://apis.google.com/js/plusone.js");c("//connect.facebook.net/en_US/all.js#xfbml=1&appId=205602882797935","facebook-jssdk");c("//platform.twitter.com/widgets.js","twitter-wjs")}(document,"script"));</script><div class="wrapper"><h1>Email Obfuscator</h1><p class="i">This easy-to-use <a href="http://en.wikipedia.org/wiki/Substitution_cipher" target="_blank" title="What is it?">substitution cipher</a> encrypts via ROT13 your email addresses to avoid them getting harvested by spam-bots while keeping the <i>mailto:</i> feature. It rests on JavaScript and includes a pure CSS fallback. Feel free to bookmark it and share it!</p><ul><li><p><label for="email">Email Address</label><input type="text" class="zz" id="email" value="" /></p><span class="tip">Type the email address you want to obfuscate.</span><li><p><label for="anchor">Anchor text</label><input type="text" class="zz" id="anchor" value="" /></p><span class="tip">The visible, clickable text attached to the mailto link, <i>eg</i> "Contact us".</span></ul><br /><ul><li><p><label for="subject">Email Subject</label><input type="text" id="subject" value="" /></p><span class="tip">The subject attached to the mailto if any, <i>eg</i> "Information request".</span><li><p><label for="html5">HTML5 syntax</label><input checked="checked" id="html5" type="checkbox"></p><li><p><label class="lg" for="target">Open link in new window</label><input checked="checked" id="target" type="checkbox"></p></ul><br /><br /><div class="info">Once done, copy and paste the code below</div><textarea id="result"></textarea><div class="footer"><p>Developed by <a href="http://www.florianbersier.com">Florian Bersier</a> – 2012 | MIT Licensed, <a href="https://github.com/xpressyoo/Email-Obfuscator">GitHub</a></p></div><!--#footer--><ul class="share">
-<li class="go"><div class="g-plusone" data-size="medium" data-href="http://rot13.florianbersier.com/"></div><li><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="xpressyoo" data-url="http://rot13.florianbersier.com/">Tweet</a><li><div class="fb-like" data-href="http://rot13.florianbersier.com/" data-send="false" data-layout="button_count" data-width="70" data-show-faces="false"></div></ul><!--#share--><!--#share--></div><script src="http://code.jquery.com/jquery.min.js"></script><script>$("input").focus(function(){$(".info").css("display","block")});String.prototype.reverse=function(){return this.split("").reverse().join("")};String.prototype.rotate=function(){return this.replace(/[a-zA-Z]/ig,function(a){var b=a.charCodeAt(0);if(b>=65&&b<=90){b=65+((b-52)%26)}else{if(b>=97&&b<=122){b=97+((b-84)%26)}else{if(b>=48&&b<=57){b=48+((b-43)%10)}}}return String.fromCharCode(b)})};$("#html5").change(function(){if($(this).is(":checked")){var a=""}else{var a=' type="text/javascript"'}$("#target").change(function(){if($(this).is(":checked")){var b='gnetrg=\\"_oynax\\"'}else{var b=""}$("input").keyup(function(){var i=$("#email").val();var l=i.reverse();var h=$("#anchor").val();var j=$("#subject").val();var e=i.rotate();var k=h.rotate();var f="?fhowrpg="+j.rotate();if(j===""){var f="";$("#result").css("height","120px")}else{$("#result").css("height","130px")}var g="<!--Place the code below where you want the link to be displayed-->";var d='<noscript><span style="unicode-bidi:bidi-override;direction:rtl;">'+l+"</span></noscript></span>";var c=g+'\n<span id="obf"><script'+a+'>document.getElementById("obf").innerHTML="<n uers=\\"znvygb:'+e+f+'\\" '+b+">"+k+'</n>".replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});<\/script>\n'+d;$("#result").val(c)}).keyup()}).change()}).change();$("#result").focus(function(){$this=$(this);$this.select();$this.mouseup(function(){$this.unbind("mouseup");return false})});
-</script><script src="https://apis.google.com/js/plusone.js"></script><script src="http://platform.twitter.com/widgets.js"></script><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script></body></html> 
+<!DOCTYPE html>
+<!--MIT LICENSED-->
+<html itemscope itemtype="http://schema.org/Product">
+<head> 
+<title>Email Obfuscation via ROT13 Cipher</title>
+<!-- metadata--> 
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="keywords" content="ROT13,algorithm,converter,javascript,tool,online,free" />
+<meta name="author" content="Florian Bersier" /> 
+<meta name="description" content="An easy-to-use substitution cipher that encrypts via ROT13 your email addresses to avoid them getting harvested by spam-bots while keeping the mailto: feature." /> 
+<!-- favicon --> 
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /> 
+<!-- css stylesheet-->
+<style>
+body{margin:0;padding:0;width:100%;font:1em Helvetica,Arial,sans-serif;color:#333;}
+a{text-decoration:none}a:hover{text-decoration:underline}
+ul p{margin:4px 0}
+.wrapper{width:980px;margin:0 auto;}
+h1{margin-top:6%}p.i{line-height:24px;margin-bottom:25px}
+ul{list-style:none;padding:0;margin:0 0 0 8%}ul li{display:inline-block;vertical-align:top}ul li:first-child{margin-right:60px}
+input[type="text"]{padding:3px 10px;border:1px solid #eee;width:230px}
+label{display:inline-block;width:110px}label.lg{width:180px;margin-left:40px}
+.tip{color:#999;font-size:0.75em;line-height:14px}
+.info{position:absolute;display:none;margin-left:300px;width:360px;height:25px;background:lightyellow;line-height:25px;text-align:center;font-size:13px;border-left:3px dashed #f1f1f1;border-right:3px dashed #f1f1f1}
+textarea{width:90%;border:25px solid #f1f1f1;padding:15px;line-height:20px;outline:none;border-radius:2px;-moz-border-radius:2px;-webkit-border-radius:2px}
+.footer{color:#999;font-size:0.85em;text-align:center}
+ul.share{position:absolute;top:9%;margin-left:600px;width:440px}ul.share li{display:inline-block;margin:0}
+</style>
+</head> 
+<body><div id="fb-root"></div>
+<script>
+(function(doc, script) {
+    var js,
+        fjs = doc.getElementsByTagName(script)[0],
+        add = function(url, id) {
+            if (doc.getElementById(id)) {return;}
+            js = doc.createElement(script);
+            js.src = url;
+            id && (js.id = id);
+            fjs.parentNode.insertBefore(js, fjs);
+        };
+
+    // Google+ button
+    add('https://apis.google.com/js/plusone.js');
+    // Facebook SDK
+    add('//connect.facebook.net/en_US/all.js#xfbml=1&appId=205602882797935', 'facebook-jssdk');
+    // Twitter SDK
+    add('//platform.twitter.com/widgets.js', 'twitter-wjs');
+
+}(document, 'script'));
+</script>
+
+
+<div class="wrapper">
+<h1>Email Obfuscator</h1>
+
+<p class="i">This easy-to-use <a href="http://en.wikipedia.org/wiki/Substitution_cipher" target="_blank" title="What is it?">substitution cipher</a> encrypts via ROT13 your email addresses to avoid them getting harvested by spam-bots while keeping the <i>mailto:</i> feature. It rests on JavaScript and includes a pure CSS fallback. Feel free to bookmark it and share it!</p>
+
+<ul>
+<li>
+<p><label for="email">Email Address</label><input type="text" class="zz" id="email" value="" /></p>
+<span class="tip">Type the email address you want to obfuscate.</span>
+
+<li>
+<p><label for="anchor">Anchor text</label><input type="text" class="zz" id="anchor" value="" /></p>
+<span class="tip">The visible, clickable text attached to the mailto link, <i>eg</i> "Contact us".</span>
+</ul>
+<br />
+<ul>
+<li>
+<p><label for="subject">Email Subject</label><input type="text" id="subject" value="" /></p>
+<span class="tip">The subject attached to the mailto if any, <i>eg</i> "Information request".</span>
+<li>
+<p><label for="html5">HTML5 syntax</label><input checked="checked" id="html5" type="checkbox"></p>
+<li>
+<p><label class="lg" for="target">Open link in new window</label><input checked="checked" id="target" type="checkbox"></p>
+</ul>
+
+<br><br><div class="info">Once done, copy and paste the code below</div><textarea id="result"></textarea><br><br>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ROT13 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:970px;height:90px"
+     data-ad-client="ca-pub-0201365754416796"
+     data-ad-slot="5406818562"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="footer">
+<p>Developed by <a href="http://florianbersier.com">Florian Bersier</a> &ndash; 2012 | MIT Licensed, <a href="https://github.com/xpressyoo/Email-Obfuscator" target="_blank">Github</a>.</p>
+</div><!--#footer-->
+
+<ul class="share">
+<li class="go"><div class="g-plusone" data-size="medium"></div>
+<li><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="xpressyoo">Tweet</a>
+<li><div class="fb-like" data-href="http://rot13.florianbersier.com/" data-send="false" data-layout="button_count" data-width="70" data-show-faces="false"></div>
+</ul><!--#share-->
+
+</div>
+
+<!--jQuery-->
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script>
+// Style
+$('input').focus(function() {  $(".info").css('display','block');  });
+// FNs
+
+// Reverse strings (CSS fallback)
+String.prototype.reverse = function() { return this.split( '' ).reverse().join( '' ); };
+
+// ROT13 function
+String.prototype.rotate  = function() { return this.replace(/[a-zA-Z]/ig, function(chr) {
+                var cc = chr.charCodeAt(0);
+                if (cc >= 65 && cc <= 90) cc = 65 + ((cc - 52) % 26);
+                else if (cc >= 97 && cc <= 122) cc = 97 + ((cc - 84) % 26);
+                else if (cc >= 48 && cc <= 57) cc = 48 + ((cc - 43) % 10);
+                return String.fromCharCode(cc);
+                    			});
+			};
+
+// INIT
+$("#html5").change(function () {
+if ($(this).is(':checked')){var ht = '';}else{var ht = ' type="text/javascript"';}
+
+$("#target").change(function () {
+if ($(this).is(':checked')){var target = 'gnetrg=\\"_oynax\\"';}else{var target = '';}
+$("input").keyup(function () {
+
+var email = $("#email").val();
+var emailrev = email.reverse();//Noscript
+var anchor = $("#anchor").val();
+var subject = $("#subject").val();
+
+// ROT13
+var emailb = email.rotate();
+var anchorb = anchor.rotate();
+var subjectb = '?fhowrpg=' + subject.rotate();
+
+// OUTPUT
+
+if (subject === ''){var subjectb = '';$('#result').css('height','120px');}else{$('#result').css('height','130px');}
+var help = '<!--Place the code below where you want the link to be displayed-->';
+var noscript = '<noscript><span style="unicode-bidi:bidi-override;direction:rtl;">' + emailrev + '</span></noscript></span>';
+var code = help + '\n<span id="obf"><script'+ ht +'>'+'document.getElementById("obf").innerHTML="<n uers=\\"znvygb:' + emailb + subjectb +'\\" '+ target +'>' + anchorb + '</n>\".replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});document.body.appendChild(eo);'+'<\/script>\n' + noscript;
+$("#result").val(code);
+}).keyup();
+}).change();
+}).change();
+
+$("#result").focus(function() {
+    $this = $(this);
+    $this.select();
+
+    // Work around Chrome's little problem
+    $this.mouseup(function() {
+        // Prevent further mouseup intervention
+        $this.unbind("mouseup");
+        return false;
+    });
+});
+
+</script>
+</body> 
+</html> 
